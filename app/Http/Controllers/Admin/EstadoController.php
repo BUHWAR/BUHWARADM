@@ -5,6 +5,8 @@ namespace BUHWAR\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use BUHWAR\Admin\Estado;
 use BUHWAR\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpKernel\HttpCache\Esi;
 
 class EstadoController extends Controller
 {
@@ -15,7 +17,8 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados=Estado::get();
+        $estados=Estado::where('estado','=',1)
+        ->get();
         return  view('admin.estados.index',compact('estados'));
     }
 
@@ -37,7 +40,12 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estado = new Estado;
+        $estado->nombre = $request->get('nombre');
+        $estado->clave = $request->get('clave');
+        $estado->estado=1;
+        $estado->save();
+        return redirect()->back();
     }
 
     /**
@@ -59,7 +67,8 @@ class EstadoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estado= Estado::findOrFail($id);
+        return view('admin.estados.edit',compact('estado'));
     }
 
     /**
@@ -69,9 +78,15 @@ class EstadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Estado $estado)
     {
-        //
+        $estado->update([
+            'nombre' => $request->nombre,
+            'clave' => $request->clave,  
+            //'estado' => "Activo",
+        ]);
+        $estados=Estado::get();
+        return  view('admin.estados.index',compact('estados'));
     }
 
     /**
@@ -80,8 +95,11 @@ class EstadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Estado $estado)
     {
-        //
+        $estado->update([
+            'estado' => 0,
+        ]);
+        return redirect()->back();
     }
 }

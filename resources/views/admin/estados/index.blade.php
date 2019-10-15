@@ -52,7 +52,6 @@
             <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                 <thead>
                     <tr>
-
                         <th>Nombre</th>
                         <th>Cve estado</th>
                         <th>Editar</th>
@@ -62,9 +61,28 @@
                 <tbody>
                     @foreach ($estados as $estado)
                     <tr>
-                    <td>{{$estado->nombre}}</td>
-                    <td>{{$estado->clave}}</td>
+                        <td>{{$estado->nombre}}</td>
+                        <td>{{$estado->clave}}</td>
+                        <td>
+                            <center>
+                                <a href="{{route('admin.estados.edit',$estado->id)}}" 
+                                    class="btn btn-label-facebook">
+                                    <i class="icon-policeedit"></i>Editar</a>
+                            </center>
+                        </td>
+                        <td>
+                            <center>
+                                <button type="button"  class="btn btn-label-google btn-label-brand btn-sm" 
+                                data-toggle="modal"
+                                 data-target="#modal-dialog-{{$estado->id}}">
+                                <i class="icon-policeedit"></i>
+                                Eliminar</button>
+                            </center>
+                         
+                        </td>
                     </tr>
+
+                    @include('admin.estados.modal')
 
                     @endforeach
                 </tbody>
@@ -74,7 +92,9 @@
                         <th>Nombre</th>
                         <th>Cve estado</th>
                         <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th>Eliminar
+                           
+                        </th>
                     </tr>
                 </tfoot>
             </table>

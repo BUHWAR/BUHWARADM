@@ -1,0 +1,22 @@
+<div class="modal modal-stick-to-bottom fade" id="modal-dialog-{{$estado->id}}" 
+    role="dialog" data-backdrop="false" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-content" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{route('admin.estados.destroy',$estado->id)}}" >
+                    <p>¿Estas seguro que deseas eliminar el estado?</p>
+            </div>
+            <div class="modal-footer">
+              
+                <button type="button" type="submit" class="btn btn-danger">Eliminar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

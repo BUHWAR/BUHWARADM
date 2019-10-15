@@ -29,7 +29,8 @@ class MunicipioController extends Controller
     public function create()
     {
         $estados=Estado::get();
-        return  view('admin.municipios.create',compact('estados'));
+        return  view('admin.municipios.create',
+                compact('estados'));
     }
 
     /**
@@ -40,7 +41,7 @@ class MunicipioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

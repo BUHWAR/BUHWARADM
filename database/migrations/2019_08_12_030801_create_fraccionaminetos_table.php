@@ -13,7 +13,7 @@ class CreateFraccionaminetosTable extends Migration
      */
     public function up()
     {
-        Schema::create('fraccionaminetos', function (Blueprint $table) {
+        Schema::create('fraccionamientos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('jefe_colonia');

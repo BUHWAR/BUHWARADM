@@ -35,20 +35,21 @@
         <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                 <h3 class="kt-portlet__head-title">
-                    Registrar estado
+                    Editar estado
                 </h3>
             </div>
         </div>
 
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right"  method="POST" action="{{route('admin.estados.store')}}">
-            {{ csrf_field() }}
+        <form class="kt-form kt-form--label-right" method="POST" action="{{route('admin.estados.update',$estado->id)}}">
+            @method('PUT')
+             @csrf
             <div class="kt-portlet__body">
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
-                        <input class="form-control" name="nombre" type="text" placeholder="ZACATECAS" id="example-text-input">
+                        <input class="form-control" onchange="mayus(this);" value="{{$estado->nombre}}" name="nombre" type="text"
+                            placeholder="ZACATECAS" id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa nombre del estado
                         </span>
@@ -58,7 +59,8 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Cve del estado:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" name="clave" placeholder="ZS" id="example-text-input">
+                        <input class="form-control" type="text" onchange="mayus(this);" name="clave" value="{{$estado->clave}}" placeholder="ZS"
+                            id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa clave del estado
                         </span>
@@ -70,8 +72,8 @@
                 <div class="kt-form__actions">
                     <div class="row">
                         <div class="col-lg-9 ml-lg-auto">
-                            <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                            <button type="submit" class="btn btn-success">Editar</button>
+                            <a href="{{route('admin.estados.index')}}" class="btn btn-secondary">
                                 Cancelar
                             </a>
                         </div>
@@ -108,6 +110,7 @@
 <!--begin::Page Scripts(used by this page) -->
 <script src="/assets/js/demo1/pages/crud/datatables/extensions/colreorder.js" type="text/javascript"></script>
 <script src="/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+<script src="/js/funciones_input.js" type="text/javascript"></script>
 
 <!--begin::Page Scripts(used by this page) -->
 <script src="/assets/js/demo1/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>

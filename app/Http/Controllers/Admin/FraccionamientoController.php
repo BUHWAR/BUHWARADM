@@ -1,12 +1,11 @@
 <?php
 
 namespace BUHWAR\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use BUHWAR\Http\Controllers\Controller;
-use BUHWAR\Admin\Fraccionamineto; 
+use BUHWAR\Admin\Fraccionamiento; 
 
-class FraccionaminetoController extends Controller
+class FraccionamientoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class FraccionaminetoController extends Controller
      */
     public function index()
     {
-        $fraccionamientos=Fraccionamineto::get();
+       $fraccionamientos=Fraccionamiento::get();
         return  view('admin.fraccionamientos.index');
     }
 
@@ -24,6 +23,7 @@ class FraccionaminetoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         return  view('admin.fraccionamientos.create');
@@ -37,7 +37,7 @@ class FraccionaminetoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

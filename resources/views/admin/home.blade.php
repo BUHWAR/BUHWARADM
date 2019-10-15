@@ -16,19 +16,20 @@
                 <div class="kt-portlet__head kt-portlet__space-x">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title kt-font-light">
-                            ASP
+                            BUHWAR
                             <br>
                             SEGURIDAD PRIVADA
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
 
-                        <pre><img src="/assets/media/icons/svg/Weather/Night-rain.svg"/></pre>
+                      
                     </div>
                 </div>
                 <div class="kt-portlet__body">
                     <div class="kt-widget28">
                         <div class="kt-widget28__visual portada">
+                        <img  style="width= 200px; height:200px;" src="/imagenes/buho_sinfondo.png">
                         </div>
                         <div class="kt-widget28__wrapper kt-portlet__space-x">
 
