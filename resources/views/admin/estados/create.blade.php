@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-lg-9 ml-lg-auto">
                             <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                            <a href="{{route('admin.estados.index')}}" class="btn btn-secondary">
                                 Cancelar
                             </a>
                         </div>

@@ -15,7 +15,7 @@
                     Municipios
                 </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link">
+            <a href="{{route('admin.municipios.create')}}" class="kt-subheader__breadcrumbs-link">
                     Registrar </a>
             </div>
         </div>
@@ -41,7 +41,8 @@
         </div>
 
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right">
+        <form class="kt-form kt-form--label-right"  method="POST" action="{{route('admin.municipios.store')}}">      
+         {{ csrf_field() }}
             <div class="kt-portlet__body">
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Selecciona el estado:</label>
@@ -61,7 +62,7 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="ZACATECAS" id="example-text-input">
+                        <input class="form-control" name="nombre" type="text" placeholder="ZACATECAS" id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa nombre del municipio
                         </span>
@@ -71,7 +72,7 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Cve del municipio:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="54" id="example-text-input">
+                        <input class="form-control" name="clave_municipio" type="text" placeholder="54" id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa clave del municipio
                         </span>
@@ -84,7 +85,7 @@
                     <div class="row">
                         <div class="col-lg-9 ml-lg-auto">
                             <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                            <a href="{{route('admin.municipios.index')}}" class="btn btn-secondary">
                                 Cancelar
                             </a>
                         </div>

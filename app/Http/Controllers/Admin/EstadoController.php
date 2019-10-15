@@ -45,7 +45,10 @@ class EstadoController extends Controller
         $estado->clave = $request->get('clave');
         $estado->estado=1;
         $estado->save();
-        return redirect()->back();
+        $estados=Estado::
+        where('estado','=',1)
+        ->get();
+        return  view('admin.estados.index',compact('estados'));
     }
 
     /**
@@ -83,7 +86,6 @@ class EstadoController extends Controller
         $estado->update([
             'nombre' => $request->nombre,
             'clave' => $request->clave,  
-            //'estado' => "Activo",
         ]);
         $estados=Estado::get();
         return  view('admin.estados.index',compact('estados'));

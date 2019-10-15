@@ -9,16 +9,20 @@ use BUHWAR\Admin\Estado;
 
 class MunicipioController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $municipios=Municipio::get();
-        return  view('admin.municipios.index',
-        compact('municipios'));
+        $municipios = Municipio::
+            where('estado','=',1)
+            ->get();
+        return  view(
+            'admin.municipios.index',
+            compact('municipios')
+        );
     }
 
     /**
@@ -28,9 +32,12 @@ class MunicipioController extends Controller
      */
     public function create()
     {
-        $estados=Estado::get();
-        return  view('admin.municipios.create',
-                compact('estados'));
+        $estados = Estado::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.municipios.create',
+            compact('estados')
+        );
     }
 
     /**
@@ -41,8 +48,17 @@ class MunicipioController extends Controller
      */
     public function store(Request $request)
     {
-        
-    }
+        $municipio = new Municipio;
+        $municipio->nombre = $request->get('nombre');
+        $municipio->clave_municipio = $request->get('clave_municipio');
+        $municipio->estado_id = $request->get('estado_id');
+        $municipio->estado=1;
+        $municipio->save();
+        $municipios=Municipio::
+        where('estado','=',1)
+        ->get();
+        return  view('admin.municipios.index',compact('municipios'));
+     }
 
     /**
      * Display the specified resource.

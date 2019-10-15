@@ -65,9 +65,11 @@
                 <tbody>
                     @foreach ($municipios as $municipio)
                     <tr>
-                        <td>{{$municipio->estado->nombre}}</td>
+                        <td>{{$municipio->estado_g->nombre}}</td>
                         <td>{{$municipio->clave_municipio}}</td>
                         <td>{{$municipio->nombre}}</td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                     @endforeach
