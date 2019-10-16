@@ -68,10 +68,23 @@
                         <td>{{$municipio->estado_g->nombre}}</td>
                         <td>{{$municipio->clave_municipio}}</td>
                         <td>{{$municipio->nombre}}</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                        <td>
+                            <center>
+                                <a href="{{route('admin.municipios.edit',$municipio->id)}}" class="btn btn-label-facebook">
+                                    <i class="icon-policeedit"></i>Editar</a>
+                            </center>
+                        </td>
+                        <td>
+                            <center>
+                                <button type="button" class="btn btn-label-google btn-label-brand btn-sm"
+                                    data-toggle="modal" data-target="#modal-dialog-{{$municipio->id}}">
+                                    <i class="icon-policeedit"></i>
+                                    Eliminar</button>
+                            </center>
 
+                        </td>
+                    </tr>
+                    @include('admin.municipios.modal')
                     @endforeach
                 </tbody>
                 <tfoot>

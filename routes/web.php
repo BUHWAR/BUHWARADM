@@ -47,7 +47,9 @@ Route::group(
     Route::get('municipios', 'MunicipioController@index')->middleware('auth')->name('admin.municipios.index');
     Route::get('municipios/create', 'MunicipioController@create')->middleware('auth')->name('admin.municipios.create');
     Route::post('municipios', 'MunicipioController@store')->middleware('auth')->name('admin.municipios.store');
-  //  Route::post('estados', 'EstadoController@store')->middleware('auth')->name('admin.estados.store');
+    Route::get('municipios/{municipio}/edit', 'MunicipioController@edit')->middleware('auth')->name('admin.municipios.edit');
+    Route::put('municipios/{municipio}', 'MunicipioController@update')->name('admin.municipios.update');
+    Route::delete('municipios/{municipio}', 'MunicipioController@destroy')->name('admin.municipios.destroy');
 
 
     //Fraccionamientos

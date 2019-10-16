@@ -11,7 +11,7 @@ class Municipio extends Model
     protected $guarded = [];
     public function estado_g()
     {  
-        return $this->belongsTo(Estado::class); //pertenece a 
+        return $this->belongsTo(Estado::class,'estado_id'); //pertenece a 
     }
 }
 

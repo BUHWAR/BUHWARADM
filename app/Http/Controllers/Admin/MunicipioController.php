@@ -79,7 +79,13 @@ class MunicipioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $municipio= Municipio::findOrFail($id);
+        $estados = Estado::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.municipios.edit',
+            compact('estados','municipio')
+        );
     }
 
     /**
@@ -89,9 +95,15 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Municipio $municipio)
     {
-        //
+        $municipio->update([
+            'nombre' => $request->nombre,
+            'clave_municipio' => $request->clave_municipio, 
+            'estado_id' => $request->estado_id,
+        ]);
+        $estados=Estado::get();
+        return  view('admin.estados.index',compact('estados'));
     }
 
     /**
@@ -100,8 +112,11 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Municipio $municipio)
     {
-        //
+        $municipio->update([
+            'estado' => 0,
+        ]);
+        return redirect()->back();
     }
 }
