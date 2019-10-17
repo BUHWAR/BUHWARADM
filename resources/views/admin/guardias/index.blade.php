@@ -52,22 +52,21 @@
             <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                 <thead>
                     <tr>
-                       
+
                         <th>Nombre</th>
                         <th>CURP</th>
                         <th>Sexo</th>
                         <th>Dirección</th>
                         <th>Teléfono</th>
+                        <th>Numero de tablet asignado</th>
+                        <th>Numero de kit de uniforme</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($guardias as $guardia)
+                    <tr>
 
-                    @endforeach
-                    <tr>
-                       
                         <td>Jesus Ramirez Vargas</td>
                         <td>RAVJ931103F33</td>
                         <td>Masculino</td>
@@ -78,50 +77,37 @@
                             01234 Musterstadt
                         </td>
                         <td>4991058737</td>
+                        <td>5</td>
+                        <td>4</td>
                         <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-brand btn-elevate btn-pill">
-                                <i class="icon-policeedit"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-danger btn-elevate btn-pill">
-                                <i class="icon-policeuniF10E"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                       
-                        <td>Jesus Ramirez Vargas</td>
-                        <td>RAVJ931103F33</td>
-                        <td>Masculino</td>
-                        <td>
-                            Firma ABC
-                            Kundendienst
-                            Hauptstr. 5
-                            01234 Musterstadt
-                        </td>
-                        <td>4991058737</td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-brand btn-elevate btn-pill">
-                                <i class="icon-policeedit"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-danger btn-elevate btn-pill">
-                                <i class="icon-policeuniF10E"></i>
-                            </a>
-                        </td>
+                                <center>
+                                <a href="{{route('admin.guardias.edit',1)}}" 
+                                        class="btn btn-label-facebook">
+                                        <i class="icon-policeedit"></i>Editar</a>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <button type="button"  class="btn btn-label-google btn-label-brand btn-sm" 
+                                    data-toggle="modal"
+                                     data-target="">
+                                    <i class="icon-policeedit"></i>
+                                    Eliminar</button>
+                                </center>
+                             
+                            </td>
                     </tr>
 
                 </tbody>
                 <tfoot>
                     <tr>
-                       
+
                         <th>Nombre</th>
                         <th>CURP</th>
                         <th>Sexo</th>
                         <th>Dirección</th>
                         <th>Teléfono</th>
+                        
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>

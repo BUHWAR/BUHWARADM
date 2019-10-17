@@ -34,7 +34,7 @@
         <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                 <h3 class="kt-portlet__head-title">
-                    Editar guardia
+                    Registrar guardia
                 </h3>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="JESUS RAMIREZ  VARGAS"
-                            id="example-text-input" value="{{$guardia->nombre}}">
+                            id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa nombre completo
                         </span>
@@ -58,7 +58,7 @@
                     <label for="example-text-input" class="col-2 col-form-label">CURP:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="RAVJ931103F33" id="example-text-input">
-                        <span class="form-text text-muted" value="{{$guardia->curp}}">
+                        <span class="form-text text-muted">
                             Por favor ingresa CURP valida
                         </span>
                     </div>
@@ -70,7 +70,7 @@
                         <input class="form-control" type="text"
                             placeholder="VILLANUEVA ZACATECAS, BARRIO DEL GUADALUPE CALLE DE LA CONCEPCION #32B"
                             id="example-text-input">
-                        <span class="form-text text-muted" value="{{$guardia->direccion}}">
+                        <span class="form-text text-muted">
                             Por favor ingresa dirección
                         </span>
                     </div>
@@ -83,30 +83,52 @@
                             <div class="input-group-prepend"><span class="input-group-text"><i
                                         class="la icon-policephone-square"></i></span></div>
                             <input type="text" class="form-control" placeholder="4921053445"
-                                aria-describedby="basic-addon1" value="{{$guardia->telefono}}">
+                                aria-describedby="basic-addon1">
                         </div>
-                        <span class="form-text text-muted"> Por favor ingresa tu numero de telefono.</span>
+                        <span class="form-text text-muted"> Por favor ingresa numero de telefono.</span>
                     </div>
                 </div>
-            </div>
-            <div class="kt-portlet__foot">
-                <div class="kt-form__actions">
-                    <div class="row">
-                        <div class="col-lg-9 ml-lg-auto">
-                            <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
-                                Cancelar
-                            </a>
+
+
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Numero de tableta asignado:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                        <span class="form-text text-muted">
+                            Por favor ingresa Numero de tableta asignado.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                            <span class="form-text text-muted">
+                                Por favor ingresa numero de kit de uniforme.
+                            </span>
+                        </div>
+                    </div>
+                <div class="kt-portlet__foot">
+                    <div class="kt-form__actions">
+                        <div class="row">
+                            <div class="col-lg-9 ml-lg-auto">
+                                <button type="submit" class="btn btn-success">Registrar</button>
+                                <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                                    Cancelar
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </form>
 
         <!--end::Form-->
     </div>
 
     <!--end::Portlet-->
+
+
 
 
 </div>

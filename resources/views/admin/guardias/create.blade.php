@@ -85,28 +85,42 @@
                             <input type="text" class="form-control" placeholder="4921053445"
                                 aria-describedby="basic-addon1">
                         </div>
-                        <span class="form-text text-muted"> Por favor ingresa tu numero de telefono.</span>
+                        <span class="form-text text-muted"> Por favor ingresa numero de telefono.</span>
                     </div>
                 </div>
 
 
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Numero de tableta asignado:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                        <span class="form-text text-muted">
+                            Por favor ingresa Numero de tableta asignado.
+                        </span>
+                    </div>
+                </div>
 
-
-
-
-            </div>
-            <div class="kt-portlet__foot">
-                <div class="kt-form__actions">
-                    <div class="row">
-                        <div class="col-lg-9 ml-lg-auto">
-                            <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
-                                Cancelar
-                            </a> 
+                <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                            <span class="form-text text-muted">
+                                Por favor ingresa numero de kit de uniforme.
+                            </span>
+                        </div>
+                    </div>
+                <div class="kt-portlet__foot">
+                    <div class="kt-form__actions">
+                        <div class="row">
+                            <div class="col-lg-9 ml-lg-auto">
+                                <button type="submit" class="btn btn-success">Registrar</button>
+                                <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                                    Cancelar
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </form>
 
         <!--end::Form-->

@@ -33,6 +33,10 @@ Route::group(
     //Guardias
     Route::get('guardias', 'GuardiaController@index')->middleware('auth')->name('admin.guardias.index');
     Route::get('guardias/create', 'GuardiaController@create')->middleware('auth')->name('admin.guardias.create');
+    Route::post('guardias', 'Guardiantroller@store')->middleware('auth')->name('admin.guardias.store');
+    Route::get('guardias/{guardias}/edit', 'GuardiaController@edit')->middleware('auth')->name('admin.guardias.edit');
+    Route::put('guardias/{guardias}', 'GuardiaController@update')->name('admin.guardias.update');
+    Route::delete('guardias/{guardias}', 'GuardiaController@destroy')->name('admin.guardias.destroy');
 
     //Estados
     Route::get('estados', 'EstadoController@index')->middleware('auth')->name('admin.estados.index');

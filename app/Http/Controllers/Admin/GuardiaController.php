@@ -17,4 +17,8 @@ class GuardiaController extends Controller
     {
       return view('admin.guardias.create');
     }
+
+    public function edit(){
+      return view('admin.guardias.edit');
+    }
 }
