@@ -34,7 +34,7 @@
         <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                 <h3 class="kt-portlet__head-title">
-                    Registrar guardia
+                    Registrar fraccionamiento
                 </h3>
             </div>
         </div>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
+                    <label for="example-text-input" class="col-2 col-form-label">Jefe de colonia:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="IVAN GALVEZ GARCIA" id="example-text-input">
                         <span class="form-text text-muted">

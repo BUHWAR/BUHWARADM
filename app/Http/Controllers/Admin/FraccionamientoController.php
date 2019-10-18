@@ -28,6 +28,12 @@ class FraccionamientoController extends Controller
     {
         return  view('admin.fraccionamientos.create');
     }
+    
+
+    
+    
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -59,7 +65,7 @@ class FraccionamientoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return  view('admin.fraccionamientos.edit');
     }
 
     /**
