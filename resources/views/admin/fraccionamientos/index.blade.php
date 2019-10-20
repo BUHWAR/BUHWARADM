@@ -37,7 +37,7 @@
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
                         &nbsp;
-                        <a href="{{route('admin.guardias.create')}}"
+                        <a href="{{route('admin.fraccionamientos.create')}}"
                             class="btn btn-brand btn btn-primary btn-elevate btn-icon-sm">
                             <i class="la icon-policeplus" data-toggle="tooltip" title="¡Editar!"></i>
                             Registrar
@@ -52,75 +52,47 @@
             <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                 <thead>
                     <tr>
-                       
                         <th>Nombre</th>
-                        <th>CURP</th>
-                        <th>Sexo</th>
-                        <th>Dirección</th>
-                        <th>Teléfono</th>
+                        <th>Jefe de colonia</th>
+                        <th>Telefono</th>
+                        <th>Municipio</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                       
-                        <td>Jesus Ramirez Vargas</td>
-                        <td>RAVJ931103F33</td>
-                        <td>Masculino</td>
+                        <td>SAN FERNANDO</td>
+                        <td>JUAN RAMIREZ VARGAS</td>
+                        <td>VILLANUEVA<td>
+                        <td>4991058737</td>     
                         <td>
-                            Firma ABC
-                            Kundendienst
-                            Hauptstr. 5
-                            01234 Musterstadt
-                        </td>
-                        <td>4991058737</td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-brand btn-elevate btn-pill">
-                                <i class="icon-policeedit"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-danger btn-elevate btn-pill">
-                                <i class="icon-policeuniF10E"></i>
-                            </a>
-                        </td>
+                                <center>
+                                <a href="{{route('admin.fraccionamientos.edit',1)}}" 
+                                        class="btn btn-label-facebook">
+                                        <i class="icon-policeedit"></i>Editar</a>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <button type="button"  class="btn btn-label-google btn-label-brand btn-sm" 
+                                    data-toggle="modal"
+                                     data-target="">
+                                    <i class="icon-policeedit"></i>
+                                    Eliminar</button>
+                                </center>
+                             
+                            </td>
+                         
                     </tr>
-                    <tr>
-                       
-                        <td>Jesus Ramirez Vargas</td>
-                        <td>RAVJ931103F33</td>
-                        <td>Masculino</td>
-                        <td>
-                            Firma ABC
-                            Kundendienst
-                            Hauptstr. 5
-                            01234 Musterstadt
-                        </td>
-                        <td>4991058737</td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-brand btn-elevate btn-pill">
-                                <i class="icon-policeedit"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="{{route('admin.guardias.create')}}" class="btn btn-danger btn-elevate btn-pill">
-                                <i class="icon-policeuniF10E"></i>
-                            </a>
-                        </td>
-                    </tr>
+
+                    
+                    
 
                 </tbody>
                 <tfoot>
                     <tr>
-                       
-                        <th>Nombre</th>
-                        <th>CURP</th>
-                        <th>Sexo</th>
-                        <th>Dirección</th>
-                        <th>Teléfono</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                      
                     </tr>
                 </tfoot>
             </table>
