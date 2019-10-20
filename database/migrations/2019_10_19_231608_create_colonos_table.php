@@ -23,6 +23,8 @@ class CreateColonosTable extends Migration
             $table->string('numero_cuenta');
             $table->date('inicio_cicloFacturacion');
             $table->date('fin_cicloFacturacion');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
