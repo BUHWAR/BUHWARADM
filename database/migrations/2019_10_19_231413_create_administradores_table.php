@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMunicipiosTable extends Migration
+class CreateAdministradoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateMunicipiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipios', function (Blueprint $table) {
+        Schema::create('administradores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->tinyInteger('clave_municipio');
-            $table->unsignedBigInteger('estado_id');
-            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->string('nombre_completo');
+            $table->string('telefono');
             $table->boolean('estado');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateMunicipiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('administradores');
     }
 }

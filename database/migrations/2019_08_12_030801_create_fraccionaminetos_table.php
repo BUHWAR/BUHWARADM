@@ -17,7 +17,8 @@ class CreateFraccionaminetosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('jefe_colonia');
-            $table->unsignedInteger('municipio_id');
+            $table->unsignedBigInteger('municipio_id');
+            $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateFraccionaminetosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fraccionaminetos');
+        Schema::dropIfExists('fraccionamientos');
     }
 }
