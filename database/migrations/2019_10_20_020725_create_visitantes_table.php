@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVistantesTable extends Migration
+class CreateVisitantesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateVistantesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vistantes', function (Blueprint $table) {
+        Schema::create('visitantes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('matricula');
             $table->timestamps();
         });
     }

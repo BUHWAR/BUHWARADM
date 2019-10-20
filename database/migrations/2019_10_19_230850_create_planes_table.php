@@ -23,10 +23,10 @@ class CreatePlanesTable extends Migration
             $table->boolean('boton_notificador_emergencias');
             $table->boolean('visualizador_visitas');
             $table->boolean('valoracion_desempeio_guardias');
-            $table->int('numero_usuario_x_plan');
+            $table->integer('numero_usuario_x_plan');
             $table->boolean('notficacion_rondin');
-            $table->int('numero_vizualizaciones_rondin');
-            $table->int('numero_codigo_qr');
+            $table->integer('numero_vizualizaciones_rondin');
+            $table->integer('numero_codigo_qr');
             $table->boolean('estado');
             $table->timestamps();
         });
