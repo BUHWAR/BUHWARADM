@@ -102,8 +102,10 @@ class MunicipioController extends Controller
             'clave_municipio' => $request->clave_municipio, 
             'estado_id' => $request->estado_id,
         ]);
-        $estados=Estado::get();
-        return  view('admin.estados.index',compact('estados'));
+        $municipios=Municipio::
+        where('estado','=',1)
+        ->get();
+        return  view('admin.municipios.index',compact('municipios'));
     }
 
     /**
