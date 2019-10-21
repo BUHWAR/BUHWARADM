@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        //User::truncate();
         $user = new User;
         $user->name = "Jesus Ramirez Vargas";
         $user->email="jesus21c.jrv@gmail.com";

@@ -56,19 +56,24 @@
                         <th>Jefe de colonia</th>
                         <th>Telefono</th>
                         <th>Municipio</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($fraccionamientos as $fraccionamiento)
                     <tr>
-                        <td>SAN FERNANDO</td>
-                        <td>JUAN RAMIREZ VARGAS</td>
-                        <td>VILLANUEVA<td>
-                        <td>4991058737</td>     
+                        <td>{{$fraccionamiento->nombre}}</td>
+                        <td>{{$fraccionamiento->jefe_colonia}}</td>
+                        <td>{{$fraccionamiento->telefono}}</td>
+                        <td>{{$fraccionamiento->municipio->nombre}}</td>
+                        <td>{{$fraccionamiento->latitud}}</td>
+                        <td>{{$fraccionamiento->longitud}}</td>
                         <td>
                                 <center>
-                                <a href="{{route('admin.fraccionamientos.edit',1)}}" 
+                                    <a href="{{route('admin.fraccionamientos.edit',$fraccionamiento->id)}}" 
                                         class="btn btn-label-facebook">
                                         <i class="icon-policeedit"></i>Editar</a>
                                 </center>
@@ -77,22 +82,26 @@
                                 <center>
                                     <button type="button"  class="btn btn-label-google btn-label-brand btn-sm" 
                                     data-toggle="modal"
-                                     data-target="">
+                                     data-target="#modal-dialog-{{$fraccionamiento->id}}">
                                     <i class="icon-policeedit"></i>
                                     Eliminar</button>
                                 </center>
                              
                             </td>
-                         
                     </tr>
-
-                    
-                    
-
+                    @include('admin.fraccionamientos.modal')
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                      
+                        <th>Nombre</th>
+                        <th>Jefe de colonia</th>
+                        <th>Telefono</th>
+                        <th>Municipio</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </tfoot>
             </table>

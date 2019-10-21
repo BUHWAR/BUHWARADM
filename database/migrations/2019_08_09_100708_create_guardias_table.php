@@ -19,7 +19,6 @@ class CreateGuardiasTable extends Migration
             $table->string('direccion',230);
             $table->string('telefono',20);
             $table->string('sexo',20);
-            $table->string('email')->unique();
             $table->tinyInteger('no_tablet')->comment('Numero de tableta asignada');
             $table->tinyInteger('no_equipo' )->comment('kit de uniforme asignado');
             $table->boolean('estado');

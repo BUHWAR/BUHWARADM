@@ -40,13 +40,14 @@
         </div>
 
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right">
+        <form class="kt-form kt-form--label-right" method="POST" action="{{route('admin.fraccionamientos.store')}}">
+            {{ csrf_field() }}
             <div class="kt-portlet__body">
 
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="SAN FERNANDO"
+                        <input class="form-control" name="nombre" type="text" placeholder="SAN FERNANDO"
                             id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa nombre fraccionamiento
@@ -54,24 +55,14 @@
                     </div>
                 </div>
 
+
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Jefe de colonia:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="IVAN GALVEZ GARCIA" id="example-text-input">
+                        <input class="form-control" type="text" placeholder="IVAN GALVEZ GARCIA" id="example-text-input"
+                            name="jefe_colonia">
                         <span class="form-text text-muted">
                             Por favor ingresa el nombre completo de jefe de colonia
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="example-text-input" class="col-2 col-form-label">Municipio:</label>
-                    <div class="col-10">
-                        <input class="form-control" type="text"
-                            placeholder="ZACATECAS ZACATECAS"
-                            id="example-text-input">
-                        <span class="form-text text-muted">
-                            Por favor ingresa dirección
                         </span>
                     </div>
                 </div>
@@ -83,9 +74,39 @@
                             <div class="input-group-prepend"><span class="input-group-text"><i
                                         class="la icon-policephone-square"></i></span></div>
                             <input type="text" class="form-control" placeholder="4921053445"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" name="telefono">
                         </div>
                         <span class="form-text text-muted"> Por favor ingresa tu numero de telefono.</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Selecciona el municipio:</label>
+                    <div class=" col-lg-10">
+                        <select class="form-control kt-select2" id="kt_select2_1" name="municipio_id">
+                            @foreach ($municipios as $municipio)
+                            <option value="{{$municipio->id}}">
+                                {{$municipio->nombre}}
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Latitutd</label>
+                    <div class="col-10">
+                        <input class="form-control" name="latitud" type="number" placeholder="22.514722"
+                            id="example-number-input">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Longitud</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" name="longitud" placeholder="-102.535556"
+                            id="example-number-input">
                     </div>
                 </div>
 
@@ -100,7 +121,7 @@
                     <div class="row">
                         <div class="col-lg-9 ml-lg-auto">
                             <button type="submit" class="btn btn-success">Registrar</button>
-                            <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
+                            <a href="{{route('admin.fraccionamientos.index')}}" class="btn btn-secondary">
                                 Cancelar
                             </a>
                         </div>

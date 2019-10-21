@@ -17,8 +17,12 @@ class CreateFraccionaminetosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('jefe_colonia');
+            $table->string('telefono');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
+            $table->double('latitud');
+            $table->double('longitud');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
