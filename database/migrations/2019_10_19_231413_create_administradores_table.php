@@ -15,11 +15,11 @@ class CreateAdministradoresTable extends Migration
     {
         Schema::create('administradores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre_completo');
-            $table->string('telefono');
-            $table->boolean('estado');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('nombre_completo')->nullable($value = true);
+            $table->string('telefono')->nullable($value = true);
+            $table->boolean('estado')->nullable($value = true);
+            $table->unsignedBigInteger('user_id')->nullable($value = true);
+            $table->foreign('user_id')->references('id')->on('users')->nullable($value = true);
             $table->timestamps();
         });
     }

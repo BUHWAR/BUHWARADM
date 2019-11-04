@@ -40,27 +40,52 @@
         </div>
 
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right">
+        <form class="kt-form kt-form--label-right" method="POST" action="{{route('admin.guardias.store')}}">
+            {{ csrf_field() }}
             <div class="kt-portlet__body">
 
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="JESUS RAMIREZ  VARGAS"
-                            id="example-text-input">
+                            id="example-text-input" name="nombre">
                         <span class="form-text text-muted">
                             Por favor ingresa nombre completo
                         </span>
                     </div>
                 </div>
 
+
+
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">CURP:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="RAVJ931103F33" id="example-text-input">
-                        <span class="form-text text-muted">
+                        <span class="form-text text-muted" name="curp">
                             Por favor ingresa CURP valida
                         </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Sexo:</label>
+                    <div class="col-10">
+                        <div class="kt-radio-inline">
+                            <label class="kt-radio">
+                                <input type="radio" name="sexo" value="masculino"> Masculino
+                                <span></span>
+                            </label>
+                            <label class="kt-radio">
+                                <input type="radio" checked="checked" name="sexo" value="femenino"> Femenino
+                                <span></span>
+                            </label>
+                            <label class="kt-radio">
+                                <input type="radio" name="sexo" value="otro"> Otro
+                                <span></span>
+                            </label>
+                        </div>
+                        <span class="form-text text-muted">Selecciona el sexo del guardia</span>
                     </div>
                 </div>
 
@@ -69,7 +94,7 @@
                     <div class="col-10">
                         <input class="form-control" type="text"
                             placeholder="VILLANUEVA ZACATECAS, BARRIO DEL GUADALUPE CALLE DE LA CONCEPCION #32B"
-                            id="example-text-input">
+                            id="example-text-input" name="direccion">
                         <span class="form-text text-muted">
                             Por favor ingresa dirección
                         </span>
@@ -77,13 +102,45 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Nombre de usuario:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="jramirez" id="example-text-input"
+                            name="nombre">
+                        <span class="form-text text-muted">
+                            Por favor ingresa nombre usuario
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Contraseña:</label>
+                    <div class="col-10">
+                        <input type="password" class="form-control" value="" placeholder="Nueva contraseña">
+                        <span class="form-text text-muted">
+                                Por favor ingresa una contraseña segura
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="form-group form-group-last row">
+                        <label class="col-2 col-form-label">Verificar contraseña:</label>
+                        <div class="col-10">
+                            <input type="password" class="form-control" value="" placeholder="Verificar contraseña">
+                            <span class="form-text text-muted">
+                                    Verifica la contraseña
+                            </span>
+                        </div>
+                    </div>
+
+                    <br>
+                <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Teléfono:</label>
                     <div class="col-10">
                         <div class="input-group">
                             <div class="input-group-prepend"><span class="input-group-text"><i
                                         class="la icon-policephone-square"></i></span></div>
                             <input type="text" class="form-control" placeholder="4921053445"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" name="telefono">
                         </div>
                         <span class="form-text text-muted"> Por favor ingresa numero de telefono.</span>
                     </div>
@@ -93,7 +150,8 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Numero de tableta asignado:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                        <input class="form-control" type="text" name="no_tablet" placeholder="1"
+                            id="example-text-input">
                         <span class="form-text text-muted">
                             Por favor ingresa Numero de tableta asignado.
                         </span>
@@ -101,14 +159,18 @@
                 </div>
 
                 <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" placeholder="1" id="example-text-input">
-                            <span class="form-text text-muted">
-                                Por favor ingresa numero de kit de uniforme.
-                            </span>
-                        </div>
+                    <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="1" name="no_equipo"
+                            id="example-text-input">
+                        <span class="form-text text-muted">
+                            Por favor ingresa numero de kit de uniforme.
+                        </span>
                     </div>
+                </div>
+
+
+
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <div class="row">

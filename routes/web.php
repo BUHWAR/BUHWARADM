@@ -29,7 +29,7 @@ Route::group(
       //Guardias
       Route::get('guardias', 'GuardiaController@index')->middleware('auth')->name('admin.guardias.index');
       Route::get('guardias/create', 'GuardiaController@create')->middleware('auth')->name('admin.guardias.create');
-      Route::post('guardias', 'Guardiantroller@store')->middleware('auth')->name('admin.guardias.store');
+      Route::post('guardias', 'GuardiaController@store')->middleware('auth')->name('admin.guardias.store');
       Route::get('guardias/{guardias}/edit', 'GuardiaController@edit')->middleware('auth')->name('admin.guardias.edit');
       Route::put('guardias/{guardias}', 'GuardiaController@update')->name('admin.guardias.update');
       Route::delete('guardias/{guardias}', 'GuardiaController@destroy')->name('admin.guardias.destroy');
@@ -57,5 +57,10 @@ Route::group(
       Route::get('fraccionamientos/{fraccionamiento}/edit', 'FraccionamientoController@edit')->middleware('auth')->name('admin.fraccionamientos.edit');
       Route::put('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@update')->middleware('auth')->name('admin.fraccionamientos.update');
       Route::delete('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@destroy')->middleware('auth')->name('admin.fraccionamientos.destroy');
-  }
+  
+    
+
+     Route::get('horarios', 'HorarioGuardiaController@index')->middleware('auth')->name('admin.horario_guardias.index');
+
+    }
 );

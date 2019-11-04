@@ -15,12 +15,12 @@ class CreateGuardiasTable extends Migration
     {
         Schema::create('guardias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre',200);
-            $table->string('direccion',230);
-            $table->string('telefono',20);
-            $table->string('sexo',20);
-            $table->tinyInteger('no_tablet')->comment('Numero de tableta asignada');
-            $table->tinyInteger('no_equipo' )->comment('kit de uniforme asignado');
+            $table->string('nombre',200)->nullable($value = true);
+            $table->string('direccion',230)->nullable($value = true);
+            $table->string('telefono',20)->nullable($value = true);
+            $table->string('sexo',20)->nullable($value = true);
+            $table->tinyInteger('no_tablet')->comment('Numero de tableta asignada')->nullable($value = true);
+            $table->tinyInteger('no_equipo' )->comment('kit de uniforme asignado')->nullable($value = true);
             $table->boolean('estado');
             $table->timestamps();
         });
