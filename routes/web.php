@@ -57,5 +57,9 @@ Route::group(
       Route::get('fraccionamientos/{fraccionamiento}/edit', 'FraccionamientoController@edit')->middleware('auth')->name('admin.fraccionamientos.edit');
       Route::put('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@update')->middleware('auth')->name('admin.fraccionamientos.update');
       Route::delete('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@destroy')->middleware('auth')->name('admin.fraccionamientos.destroy');
-  }
+ 
+      //Horario de guardias
+      Route::get('horarios', 'HorarioGuardiaController@index')->middleware('auth')->name('admin.horarios.index');
+ 
+    }
 );
