@@ -1,9 +1,10 @@
 <?php
 
 namespace BUHWAR\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
 use BUHWAR\Http\Controllers\Controller;
-use BUHWAR\Admin\Fraccionamiento; 
+use BUHWAR\Admin\Fraccionamiento;
 use BUHWAR\Admin\Municipio;
 
 class FraccionamientoController extends Controller
@@ -15,11 +16,12 @@ class FraccionamientoController extends Controller
      */
     public function index()
     {
-       $fraccionamientos=Fraccionamiento::
-            where('estado','=',1)
+        $fraccionamientos = Fraccionamiento::where('estado', '=', 1)
             ->get();
-        return  view('admin.fraccionamientos.index',
-        compact("fraccionamientos"));
+        return  view(
+            'admin.fraccionamientos.index',
+            compact("fraccionamientos")
+        );
     }
 
     /**
@@ -27,19 +29,20 @@ class FraccionamientoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function create()
     {
-        $municipios=Municipio::
-        where('estado','=',1)
-        ->get();
-        return  view('admin.fraccionamientos.create',
-        compact('municipios'));
+        $municipios = Municipio::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.fraccionamientos.create',
+            compact('municipios')
+        );
     }
-    
 
-    
-    
+
+
+
 
 
 
@@ -54,17 +57,18 @@ class FraccionamientoController extends Controller
         $fraccionamiento = new Fraccionamiento;
         $fraccionamiento->nombre = $request->get('nombre');
         $fraccionamiento->jefe_colonia = $request->get('jefe_colonia');
-        $fraccionamiento->telefono=$request->get('telefono');
+        $fraccionamiento->telefono = $request->get('telefono');
         $fraccionamiento->municipio_id = $request->get('municipio_id');
         $fraccionamiento->latitud = $request->get('latitud');
         $fraccionamiento->longitud = $request->get('longitud');
-        $fraccionamiento->estado=1;
+        $fraccionamiento->estado = 1;
         $fraccionamiento->save();
-        $fraccionamientos=Fraccionamiento::
-        where('estado','=',1)
-        ->get();
-        return  view('admin.fraccionamientos.index',
-        compact('fraccionamientos'));
+        $fraccionamientos = Fraccionamiento::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.fraccionamientos.index',
+            compact('fraccionamientos')
+        );
     }
 
     /**
@@ -86,12 +90,14 @@ class FraccionamientoController extends Controller
      */
     public function edit($id)
     {
-        $fraccionamiento=  Fraccionamiento::findOrFail($id);
-        $municipios=Municipio
-        ::where('estado','=',1)
-        ->get();
-        return  view('admin.fraccionamientos.edit',
-        compact('municipios','fraccionamiento'));
+        $fraccionamiento =  Fraccionamiento::findOrFail($id);
+        $municipios = Municipio
+            ::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.fraccionamientos.edit',
+            compact('municipios', 'fraccionamiento')
+        );
     }
 
     /**
@@ -106,19 +112,19 @@ class FraccionamientoController extends Controller
         $fraccionamiento = Fraccionamiento::findOrFail($id);
         $fraccionamiento->nombre = $request->get('nombre');
         $fraccionamiento->jefe_colonia = $request->get('jefe_colonia');
-        $fraccionamiento->telefono=$request->get('telefono');
+        $fraccionamiento->telefono = $request->get('telefono');
         $fraccionamiento->municipio_id = $request->get('municipio_id');
         $fraccionamiento->latitud = $request->get('latitud');
         $fraccionamiento->longitud = $request->get('longitud');
-        $fraccionamiento->estado=1;
+        $fraccionamiento->estado = 1;
         $fraccionamiento->update();
-       
-        $fraccionamientos=Fraccionamiento::
-        where('estado','=',1)
-        ->get();
-        return  view('admin.fraccionamientos.index',
-        compact('fraccionamientos'));
-      
+
+        $fraccionamientos = Fraccionamiento::where('estado', '=', 1)
+            ->get();
+        return  view(
+            'admin.fraccionamientos.index',
+            compact('fraccionamientos')
+        );
     }
 
     /**

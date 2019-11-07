@@ -4,14 +4,22 @@
     <div class="kt-container  kt-container--fluid ">
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
+<<<<<<< HEAD
                 Municipios
+=======
+                Horario guardias
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
             </h3>
             <span class="kt-subheader__separator kt-hidden"></span>
             <div class="kt-subheader__breadcrumbs">
                 <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
                 <a href="" class="kt-subheader__breadcrumbs-link">
+<<<<<<< HEAD
                     Listado de municipios</a>
+=======
+                    Listado de Horario guardias</a>
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
 
                 <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
             </div>
@@ -30,14 +38,22 @@
                     <i class="kt-font-brand icon-policepoliceman"></i>
                 </span>
                 <h3 class="kt-portlet__head-title">
+<<<<<<< HEAD
                     Listado de horario de guardias
+=======
+                    Listado de Horario guardias
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                 </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
                         &nbsp;
+<<<<<<< HEAD
                         <a href="{{route('admin.municipios.create')}}"
+=======
+                        <a href="{{route('admin.horario_guardias.create')}}"
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                             class="btn btn-brand btn btn-primary btn-elevate btn-icon-sm">
                             <i class="la icon-policeplus" data-toggle="tooltip" title="¡Editar!"></i>
                             Registrar
@@ -52,6 +68,7 @@
             <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>
                             Guardia
                         </th>
@@ -59,11 +76,18 @@
                         <th>Hora de entrada</th>
                         <th>Hora de Salida</th>
 
+=======
+                        <th>Guardia</th>
+                        <th>Dia</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora Fin</th>
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                    
                     <tr>
                     <th>
@@ -77,13 +101,29 @@
                         <td>
                             <center>
                                 <a href="" class="btn btn-label-facebook">
+=======
+                 
+                    <tr>
+                        <td>Arlette Beltran Leyva</td>
+                        <td>02/05/2019</td>
+                        <td>9:00 am</td>
+                        <td>4:00 am</td>
+                        <td>
+                            <center>
+                                <a href=""
+                                    class="btn btn-label-facebook">
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                                     <i class="icon-policeedit"></i>Editar</a>
                             </center>
                         </td>
                         <td>
                             <center>
                                 <button type="button" class="btn btn-label-google btn-label-brand btn-sm"
+<<<<<<< HEAD
                                     data-toggle="modal" data-target="">
+=======
+                                    data-toggle="modal" data-target="#modal-dialog-">
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                                     <i class="icon-policeedit"></i>
                                     Eliminar</button>
                             </center>
@@ -91,6 +131,7 @@
                         </td>
                     </tr>
                     @include('admin.horario_guardias.modal')
+<<<<<<< HEAD
                    
                 </tbody>
                 <tfoot>
@@ -104,6 +145,18 @@
                         <th>Editar</th>
                         <th>Eliminar</th>
                       
+=======
+                
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Guardia</th>
+                        <th>Dia</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora Fin</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
                     </tr>
                 </tfoot>
             </table>

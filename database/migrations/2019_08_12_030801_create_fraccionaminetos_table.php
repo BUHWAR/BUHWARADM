@@ -15,13 +15,13 @@ class CreateFraccionaminetosTable extends Migration
     {
         Schema::create('fraccionamientos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('jefe_colonia');
-            $table->string('telefono');
+            $table->string('nombre')->nullable($value = true);
+            $table->string('jefe_colonia')->nullable($value = true);
+            $table->string('telefono')->nullable($value = true);
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->double('latitud');
-            $table->double('longitud');
+            $table->double('latitud')->nullable($value = true);
+            $table->double('longitud')->nullable($value = true);
             $table->boolean('estado');
             $table->timestamps();
         });

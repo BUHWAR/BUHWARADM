@@ -15,7 +15,7 @@
                     Guardias </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
                 <a href="" class="kt-subheader__breadcrumbs-link">
-                    Registrar </a>
+                    Editar guardia </a>
             </div>
         </div>
 
@@ -34,13 +34,17 @@
         <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                 <h3 class="kt-portlet__head-title">
-                    Registrar guardia
+                    Editar guardia
                 </h3>
             </div>
         </div>
 
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right">
+        <!--begin::Form-->
+        <form class="kt-form kt-form--label-right" method="POST"
+            action="{{route('admin.guardias.update',$guardia->id)}}">
+            @method('PUT')
+            @csrf
             <div class="kt-portlet__body">
 
                 <div class="form-group row">
@@ -55,10 +59,22 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Nombre de usuario:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="jramirez" id="example-text-input"
+                    name="nombre" value="{{$guardia->nombre}}">
+                        <span class="form-text text-muted">
+                            Por favor ingresa nombre usuario
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">CURP:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="RAVJ931103F33" id="example-text-input">
-                        <span class="form-text text-muted">
+                    <span class="form-text text-muted" value="{{$guardia->curp}}">
                             Por favor ingresa CURP valida
                         </span>
                     </div>
@@ -69,7 +85,7 @@
                     <div class="col-10">
                         <input class="form-control" type="text"
                             placeholder="VILLANUEVA ZACATECAS, BARRIO DEL GUADALUPE CALLE DE LA CONCEPCION #32B"
-                            id="example-text-input">
+                    id="example-text-input" value="{{$guardia->direccion}}">
                         <span class="form-text text-muted">
                             Por favor ingresa dirección
                         </span>
@@ -83,7 +99,7 @@
                             <div class="input-group-prepend"><span class="input-group-text"><i
                                         class="la icon-policephone-square"></i></span></div>
                             <input type="text" class="form-control" placeholder="4921053445"
-                                aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1" value="{{$guardia->telefono}}">
                         </div>
                         <span class="form-text text-muted"> Por favor ingresa numero de telefono.</span>
                     </div>
@@ -94,26 +110,27 @@
                     <label for="example-text-input" class="col-2 col-form-label">Numero de tableta asignado:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" placeholder="1" id="example-text-input">
-                        <span class="form-text text-muted">
+                        <span class="form-text text-muted" value="{{$guardia->no_tablet}}">
                             Por favor ingresa Numero de tableta asignado.
                         </span>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" placeholder="1" id="example-text-input">
-                            <span class="form-text text-muted">
-                                Por favor ingresa numero de kit de uniforme.
-                            </span>
-                        </div>
+                    <label for="example-text-input" class="col-2 col-form-label">Numero de equipo:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" placeholder="1" id="example-text-input">
+                        <span class="form-text text-muted" value="{{$guardia->no_equipo}}">
+                            Por favor ingresa numero de kit de uniforme.
+                        </span>
                     </div>
+                </div>
+                
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <div class="row">
                             <div class="col-lg-9 ml-lg-auto">
-                                <button type="submit" class="btn btn-success">Registrar</button>
+                                <button type="submit" class="btn btn-success">Editar</button>
                                 <a href="{{route('admin.guardias.index')}}" class="btn btn-secondary">
                                     Cancelar
                                 </a>

@@ -15,14 +15,14 @@ class CreateColonosTable extends Migration
     {
         Schema::create('colonos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->unsignedBigInteger('fraccionamiento_id');
+            $table->string('nombre')->nullable($value = true);
+            $table->unsignedBigInteger('fraccionamiento_id')->nullable($value = true);
             $table->foreign('fraccionamiento_id')->references('id')->on('fraccionamientos');
             $table->unsignedBigInteger('plan_id');
             $table->foreign('plan_id')->references('id')->on('planes');
-            $table->string('numero_cuenta');
-            $table->date('inicio_cicloFacturacion');
-            $table->date('fin_cicloFacturacion');
+            $table->string('numero_cuenta')->nullable($value = true);
+            $table->date('inicio_cicloFacturacion')->nullable($value = true);
+            $table->date('fin_cicloFacturacion')->nullable($value = true);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
