@@ -57,6 +57,12 @@ Route::group(
       Route::get('fraccionamientos/{fraccionamiento}/edit', 'FraccionamientoController@edit')->middleware('auth')->name('admin.fraccionamientos.edit');
       Route::put('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@update')->middleware('auth')->name('admin.fraccionamientos.update');
       Route::delete('fraccionamientos/{fraccionamiento}', 'FraccionamientoController@destroy')->middleware('auth')->name('admin.fraccionamientos.destroy');
+<<<<<<< HEAD
+ 
+      //Horario de guardias
+      Route::get('horarios', 'HorarioGuardiaController@index')->middleware('auth')->name('admin.horarios.index');
+ 
+=======
   
     
 
@@ -64,5 +70,6 @@ Route::group(
      Route::get('horarios/create', 'HorarioGuardiaController@create')->middleware('auth')->name('admin.horario_guardias.create');
      Route::post('horarios', 'HorarioGuardiaController@store')->middleware('auth')->name('admin.horario_guardias.store');
 
+>>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
     }
 );
