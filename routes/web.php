@@ -61,6 +61,8 @@ Route::group(
     
 
      Route::get('horarios', 'HorarioGuardiaController@index')->middleware('auth')->name('admin.horario_guardias.index');
+     Route::get('horarios/create', 'HorarioGuardiaController@create')->middleware('auth')->name('admin.horario_guardias.create');
+     Route::post('horarios', 'HorarioGuardiaController@store')->middleware('auth')->name('admin.horario_guardias.store');
 
     }
 );
