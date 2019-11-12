@@ -211,12 +211,14 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Page Vendors(used by this page) -->
 	<script src="/assets/vendors/general/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
 
+
 	<!--end::Page Vendors -->
 
 
 
 	<!--begin::Page Scripts(used by this page) -->
 	<script src="/assets/js/demo12/pages/dashboard.js" type="text/javascript"></script>
+	<script src="{{ asset('js/functions.js') }}"></script>
 
 	<!--end::Page Scripts -->
 

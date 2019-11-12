@@ -103,8 +103,10 @@
 								class="kt-menu__link "><i
 									class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 									class="kt-menu__link-text">Guardias</span></a></li>
-						<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.horario_guardias.index')}}"
-								class="kt-menu__link "><i
+						<li class="kt-menu__item " aria-haspopup="true">
+							{{-- <a href="{{route('admin.horario_guardias.index')}}"
+								class="kt-menu__link "> --}}
+								<i
 									class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 									class="kt-menu__link-text">
 									Horario Guardias</span></a></li>
@@ -145,10 +147,6 @@
 					</ul>
 				</div>
 			</li>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 			<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a
 					href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -170,7 +168,7 @@
 								class="kt-menu__link "><i
 									class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 									class="kt-menu__link-text">Guardias</span></a></li>
-						<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.horarios.index')}}"
+						{{-- <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.horarios.index')}}" --}}
 								class="kt-menu__link "><i
 									class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 									class="kt-menu__link-text">
@@ -178,8 +176,6 @@
 					</ul>
 				</div>
 			</li>
-=======
-
 			<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a
 				href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -213,10 +209,6 @@
 				</ul>
 			</div>
 		</li>
-
->>>>>>> 08f75151c6c76162b7dcedbebf03f69a4e7a4484
-
->>>>>>> 4b920f7ed73e15759eb5827de7973a7cc241b1b0
 		</ul>
 	</div>
 </div>

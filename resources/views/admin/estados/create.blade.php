@@ -48,20 +48,30 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
-                        <input class="form-control" name="nombre" type="text" placeholder="ZACATECAS" id="example-text-input">
+                    <input class="form-control" name="nombre" type="text" placeholder="ZACATECAS" id="example-text-input" value="{{ old('nombre')}}" onkeypress=" return mayus(event, this)" onkeyup="mayus(event, this)">
+                       @if ($errors->has('nombre'))
                         <span class="form-text text-muted">
-                            Por favor ingresa nombre del estado
+                     <strong style="color:red"> {{ $errors->first('nombre') }}</strong>
                         </span>
+                        @endif
+                        {{-- <span class="form-text text-muted">
+                            Por favor ingresa nombre del estado
+                        </span> --}}
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Cve del estado:</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" name="clave" placeholder="ZS" id="example-text-input">
+                        <input class="form-control" type="text" name="clave" placeholder="ZS" id="example-text-input" onkeypress="return soloNumeros(event);">
+                        @if ($errors->has('clave'))
                         <span class="form-text text-muted">
-                            Por favor ingresa clave del estado
+                        {{ $errors->first('clave') }}
                         </span>
+                        @endif
+                        {{-- <span class="form-text text-muted">
+                            Por favor ingresa clave del estado
+                        </span> --}}
                     </div>
                 </div>
 

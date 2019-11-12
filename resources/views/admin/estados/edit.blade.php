@@ -49,10 +49,15 @@
                     <label for="example-text-input" class="col-2 col-form-label">Nombre:</label>
                     <div class="col-10">
                         <input class="form-control" onchange="mayus(this);" value="{{$estado->nombre}}" name="nombre" type="text"
-                            placeholder="ZACATECAS" id="example-text-input">
+                            placeholder="ZACATECAS" id="example-text-input" onkeyup="mayus(this);">
+                             @if ($errors->has('nombre'))
                         <span class="form-text text-muted">
-                            Por favor ingresa nombre del estado
+                        {{ $errors->first('nombre') }}
                         </span>
+                        @endif
+                        {{-- <span class="form-text text-muted">
+                            Por favor ingresa nombre del estado
+                        </span> --}}
                     </div>
                 </div>
 
@@ -60,10 +65,15 @@
                     <label for="example-text-input" class="col-2 col-form-label">Cve del estado:</label>
                     <div class="col-10">
                         <input class="form-control" type="text" onchange="mayus(this);" name="clave" value="{{$estado->clave}}" placeholder="ZS"
-                            id="example-text-input">
+                            id="example-text-input" onkeypress="return soloNumeros(event);">
+                         @if ($errors->has('clave'))
                         <span class="form-text text-muted">
-                            Por favor ingresa clave del estado
+                        {{ $errors->first('clave') }}
                         </span>
+                        @endif
+                        {{-- <span class="form-text text-muted">
+                            Por favor ingresa clave del estado
+                        </span> --}}
                     </div>
                 </div>
 
